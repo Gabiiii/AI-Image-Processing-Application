@@ -7,7 +7,7 @@
             <li><a class="navbar-brand" href="{{ route('admin.dashboard') }}">AIMAGE</a></li>
         @endif
         @if(Auth::user()->role->id == 2)
-        <li><a class="navbar-brand" href="{{ route('author.dashboard') }}">AIMAGE</a></li>
+        <li><a class="navbar-brand" href="{{ route('author.post.index') }}">AIMAGE</a></li>
         @endif
 
         </div>

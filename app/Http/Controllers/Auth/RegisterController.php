@@ -42,7 +42,7 @@ class RegisterController extends Controller
         {
             $this->redirectTo = route('admin.dashboard');
         } else {
-            $this->redirectTo = route('author.dashboard');
+            $this->redirectTo = route('home');
         }
         $this->middleware('guest');
     }

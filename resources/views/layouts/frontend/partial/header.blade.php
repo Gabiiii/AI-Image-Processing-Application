@@ -17,10 +17,8 @@
                     <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
                 @endif
                 @if(Auth::user()->role->id == 2)
-                    <li><a href="{{ route('author.dashboard') }}">Dashboard</a></li>
+                    <li><a href="{{ route('author.post.index') }}">Dashboard</a></li>
                 @endif
-            @endguest
-
             <li>
                     <a class="dropdown-item" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
@@ -33,6 +31,8 @@
                         @csrf
                     </form>
                 </li>
+            @endguest
+
 
         </ul><!-- main-menu -->
 
