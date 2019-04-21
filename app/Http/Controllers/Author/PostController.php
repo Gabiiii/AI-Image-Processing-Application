@@ -50,10 +50,9 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'title' => 'required',
-            'image' => 'required',
-            'categories' => 'required',
-            'tags' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            // 'categories' => 'required',
+            // 'tags' => 'required',
             'body' => 'required',
         ]);
         $image = $request->file('image');
@@ -90,8 +89,8 @@ class PostController extends Controller
         $post->is_approved = false;
         $post->save();
 
-        $post->categories()->attach($request->categories);
-        $post->tags()->attach($request->tags);
+        // $post->categories()->attach($request->categories);
+        // $post->tags()->attach($request->tags);
 
         $users = User::where('role_id','1')->get();
         Notification::send($users, new NewAuthorPost($post));
