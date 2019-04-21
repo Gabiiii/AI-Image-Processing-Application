@@ -61,15 +61,17 @@ class PostController extends Controller
         {
 //            make unipue name for image
             $currentDate = Carbon::now()->toDateString();
-            $imageName  = $slug.'-'.$currentDate.'-'.uniqid().'.'.$image->getClientOriginalExtension();
+            $imageName  = 'aimage'.$slug.'-'.$currentDate.'-'.uniqid().'.'.$image->getClientOriginalExtension();
 
-            if(!Storage::disk('public')->exists('post'))
-            {
-                Storage::disk('public')->makeDirectory('post');
-            }
+            // if(!Storage::disk('public')->exists('post'))
+            // {
+            //     Storage::disk('public')->makeDirectory('post');
+            // }
 
-            $postImage = Image::make($image)->resize(1600,1066)->save();
-            Storage::disk('public')->put('post/'.$imageName,$postImage);
+            // $postImage = Image::make($image)->resize(1600,1066)->save(); 여기서 tmp 문제
+            // Storage::disk('public')->put('post/'.$imageName,$postImage);
+            $t = Storage::disk('s3')->put($imageName, file_get_contents($image), 'public');
+
 
         } else {
             $imageName = "default.png";
@@ -80,12 +82,12 @@ class PostController extends Controller
         $post->slug = $slug;
         $post->image = $imageName;
         $post->body = $request->body;
-        if(isset($request->status))
-        {
-            $post->status = true;
-        }else {
-            $post->status = false;
-        }
+        // if(isset($request->status))
+        // {
+        //     $post->status = true;
+        // }else {
+        //     $post->status = false;
+        // }
         $post->is_approved = false;
         $post->save();
 
@@ -93,7 +95,7 @@ class PostController extends Controller
         // $post->tags()->attach($request->tags);
 
         $users = User::where('role_id','1')->get();
-        Notification::send($users, new NewAuthorPost($post));
+        // Notification::send($users, new NewAuthorPost($post));
         Toastr::success('Post Successfully Saved :)','Success');
         return redirect()->route('author.post.index');
     }
