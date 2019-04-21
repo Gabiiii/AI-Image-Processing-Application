@@ -113,7 +113,14 @@ class PostController extends Controller
             Toastr::error('You are not authorized to access this post','Error');
             return redirect()->back();
         }
-        return view('author.post.show',compact('post'));
+        $imageName = Storage::disk('s3')->url($post->image);
+        // dd($imageName);
+
+        return "<img src='".$imageName."'/>";
+
+        // return view('author.post.show',compact('post'))
+        // ->with('path',$imageName);
+
     }
 
     /**
