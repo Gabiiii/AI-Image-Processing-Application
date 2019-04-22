@@ -110,7 +110,7 @@ class PostController extends Controller
     {
         if ($post->user_id != Auth::id())
         {
-            Toastr::error('You are not authorized to access this post','Error');
+            Toastr::error('이 게시물에 액세스할 수 있는 권한이 없음','Error');
             return redirect()->back();
         }
         $imageName = Storage::disk('s3')->url($post->image);

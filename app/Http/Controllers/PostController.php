@@ -16,6 +16,7 @@ class PostController extends Controller
         $posts = Post::latest()->approved()->published()->paginate(6);
         return view('posts',compact('posts'));
     }
+    
     public function details($slug)
     {
         $post = Post::where('slug',$slug)->approved()->published()->first();
