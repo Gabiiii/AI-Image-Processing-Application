@@ -50,6 +50,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
+            'title' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             // 'categories' => 'required',
             // 'tags' => 'required',
