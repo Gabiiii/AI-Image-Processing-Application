@@ -38,14 +38,12 @@ class S3Controller extends Controller
     public function imagedown($id)
     {
         $post = Post::find($id);
-        $image =  Storage::disk('s3')->url('after/'.$post->image); 
-
-
+        $image =  Storage::disk('s3')->url($post->image); 
+        // $imagename="test.jpeg";
         header("Cache-Control: public");
         header("Content-Description: File Transfer");
         header("Content-Disposition: attachment; filename=" . $post->image);
         header("Content-Type: image/jpeg");
-
         return readfile($image);
 
 
