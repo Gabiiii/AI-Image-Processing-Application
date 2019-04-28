@@ -70,6 +70,10 @@ Route::group(['as'=>'author.','prefix'=>'author','namespace'=>'Author','middlewa
 
     Route::resource('post','PostController');
     Route::get('/favorite','FavoriteController@index')->name('favorite.index');
+
+    Route::get('/s3Controller/show','S3Controller@imageshow')->name('s3image');
+    Route::get('/s3Controller/down/{id}','S3Controller@imagedown')->name('s3imagedown');
+
 });
 
 View::composer('layouts.frontend.partial.footer',function ($view) {
