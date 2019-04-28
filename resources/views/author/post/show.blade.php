@@ -37,7 +37,8 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-                    <div class="card">
+
+                    <!-- <div class="card">
                         <div class="header bg-cyan">
                             <h2>
                                 Categoryies
@@ -48,7 +49,8 @@
                                 <span class="label bg-cyan">{{ $category->name }}</span>
                             @endforeach
                         </div>
-                    </div>
+                    </div> -->
+<!-- 
                     <div class="card">
                         <div class="header bg-green">
                             <h2>
@@ -60,7 +62,8 @@
                                 <span class="label bg-green">{{ $tag->name }}</span>
                             @endforeach
                         </div>
-                    </div>
+                    </div> -->
+
                     <div class="card">
                         <div class="header bg-amber">
                             <h2>
@@ -68,10 +71,10 @@
                             </h2>
                         </div>
                         <div class="body">
-
-
-
-                        <img src="{{'path'}}">
+                        <!-- {{$post->user_id}} -->
+                        <!-- <button onclick="{{route('author.s3image',$post->user_id)}}">사진보기</button> -->
+                        <a href="{{route('author.s3image',$post->user_id)}}">사진보기</a><br/>
+                        <a href="{{route('author.s3imagedown',$post->user_id)}}">다운</a>
 
 
                         </div>

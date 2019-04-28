@@ -95,7 +95,9 @@
 
             </div><!-- row -->
 
-            <a class="load-more-btn" href="#"><b>LOAD MORE</b></a>
+            <!-- <a class="load-more-btn" href="#"><b>LOAD MORE</b></a> -->
+            <img src="{{ asset('assets/logo.png') }}" style="width:25%;">
+
 
         </div><!-- container -->
     </section><!-- section -->

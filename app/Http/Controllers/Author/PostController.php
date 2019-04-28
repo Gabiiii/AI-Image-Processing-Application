@@ -50,6 +50,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
+            'title' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             // 'categories' => 'required',
             // 'tags' => 'required',
@@ -61,7 +62,7 @@ class PostController extends Controller
         {
 //            make unipue name for image
             $currentDate = Carbon::now()->toDateString();
-            $imageName  = 'aimage'.$slug.'-'.$currentDate.'-'.uniqid().'.'.$image->getClientOriginalExtension();
+            $imageName  = $slug.'-'.$currentDate.'-'.uniqid().'.'.$image->getClientOriginalExtension();
 
             // if(!Storage::disk('public')->exists('post'))
             // {
@@ -110,15 +111,15 @@ class PostController extends Controller
     {
         if ($post->user_id != Auth::id())
         {
-            Toastr::error('You are not authorized to access this post','Error');
+            Toastr::error('이 게시물에 액세스할 수 있는 권한이 없음','Error');
             return redirect()->back();
         }
-        $imageName = Storage::disk('s3')->url($post->image);
+        // $imageName = Storage::disk('s3')->url($post->image);
         // dd($imageName);
 
-        return "<img src='".$imageName."'/>";
+        // return "<img src='".$imageName."'/>";
 
-        // return view('author.post.show',compact('post'))
+        return view('author.post.show',compact('post'));
         // ->with('path',$imageName);
 
     }
