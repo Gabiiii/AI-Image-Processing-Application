@@ -28,7 +28,7 @@ class S3Controller extends Controller
     {
         // dd($id);
         $post=Post::find($id);
-
+        // dd($post->image);
         $imageName = Storage::disk('s3')->url($post->image);
         
         return "<img src='".$imageName."'/>";
@@ -39,13 +39,15 @@ class S3Controller extends Controller
     {
         $post = Post::find($id);
         $image =  Storage::disk('s3')->url($post->image); 
+
+        // dd($image);
         // $imagename="test.jpeg";
+
         header("Cache-Control: public");
         header("Content-Description: File Transfer");
         header("Content-Disposition: attachment; filename=" . $post->image);
         header("Content-Type: image/jpeg");
         return readfile($image);
-
 
 
     }
