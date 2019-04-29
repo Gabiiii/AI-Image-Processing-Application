@@ -52,8 +52,8 @@ class PostController extends Controller
         $this->validate($request,[
             'title' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            // 'categories' => 'required',
-            // 'tags' => 'required',
+            'categories' => 'required',
+            'tags' => 'required',
             'body' => 'required',
         ]);
         $image = $request->file('image');
@@ -92,8 +92,8 @@ class PostController extends Controller
         $post->is_approved = false;
         $post->save();
 
-        // $post->categories()->attach($request->categories);
-        // $post->tags()->attach($request->tags);
+        $post->categories()->attach($request->categories);
+        $post->tags()->attach($request->tags);
 
         $users = User::where('role_id','1')->get();
         // Notification::send($users, new NewAuthorPost($post));
@@ -114,12 +114,13 @@ class PostController extends Controller
             Toastr::error('이 게시물에 액세스할 수 있는 권한이 없음','Error');
             return redirect()->back();
         }
-        // $imageName = Storage::disk('s3')->url($post->image);
+        $imageName = Storage::disk('s3')->url($post->image);
+        // $post=$post->view_count+1;
         // dd($imageName);
 
         // return "<img src='".$imageName."'/>";
 
-        return view('author.post.show',compact('post'));
+        return view('author.post.show',compact('post'),["path"=>$imageName]);
         // ->with('path',$imageName);
 
     }

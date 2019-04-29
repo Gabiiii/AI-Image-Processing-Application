@@ -20,7 +20,7 @@
              data-swiper-breakpoints="true" data-swiper-loop="true" >
             <div class="swiper-wrapper">
 
-               @foreach($categories as $category)
+               <!-- @foreach($categories as $category)
                     <div class="swiper-slide">
                         <a class="slider-category" href="{{ route('category.posts',$category->slug) }}">
                             <div class="blog-image"><img src="{{ Storage::disk('public')->url('category/slider/'.$category->image) }}" alt="{{ $category->name }}"></div>
@@ -33,9 +33,10 @@
                                 </div>
                             </div>
 
-                        </a>
-                    </div><!-- swiper-slide -->
-                @endforeach
+                        </a> -->
+                    <!-- </div> -->
+                    <!-- swiper-slide -->
+                <!-- @endforeach -->
 
             </div><!-- swiper-wrapper -->
 

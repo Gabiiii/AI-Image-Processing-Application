@@ -12,7 +12,7 @@
         <div class="block-header">
             <a class="btn btn-primary waves-effect" href="{{ route('author.post.create') }}">
                 <i class="material-icons">add</i>
-                <span>Add New Post</span>
+                <span>포스트 작성</span>
             </a>
         </div>
         <!-- Exportable Table -->
@@ -21,7 +21,7 @@
                 <div class="card">
                     <div class="header">
                         <h2>
-                            ALL POSTS
+                            전체 포스트
                             <span class="badge bg-blue">{{ $posts->count() }}</span>
                         </h2>
                     </div>
@@ -30,12 +30,12 @@
                             <table class="table table-bordered table-striped table-hover dataTable js-exportable">
                                 <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Title</th>
-                                    <th>Author</th>
+                                    <th>아이디</th>
+                                    <th>제목</th>
+                                    <th>사용자</th>
                                     <th><i class="material-icons">visibility</i></th>
-                                    <th>Is Approved</th>
-                                    <th>Status</th>
+                                    <th>승인 상태</th>
+                                    <!-- <th>Status</th> -->
                                     <th>Created At</th>
                                     {{--<th>Updated At</th>--}}
                                     <th>Action</th>
@@ -43,12 +43,12 @@
                                 </thead>
                                 <tfoot>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Title</th>
-                                    <th>Author</th>
+                                    <th>아이디</th>
+                                    <th>제목</th>
+                                    <th>사용자</th>
                                     <th><i class="material-icons">visibility</i></th>
-                                    <th>Is Approved</th>
-                                    <th>Status</th>
+                                    <th>승인 상태</th>
+                                    <!-- <th>상태</th> -->
                                     <th>Created At</th>
                                     {{--<th>Updated At</th>--}}
                                     <th>Action</th>
@@ -68,13 +68,13 @@
                                                     <span class="badge bg-pink">Pending</span>
                                                 @endif
                                             </td>
-                                            <td>
+                                            <!-- <td>
                                                 @if($post->status == true)
                                                     <span class="badge bg-blue">Published</span>
                                                 @else
                                                     <span class="badge bg-pink">Pending</span>
                                                 @endif
-                                            </td>
+                                            </td> -->
                                             <td>{{ $post->created_at }}</td>
                                             {{--<td>{{ $post->updated_at }}</td>--}}
                                             <td class="text-center">

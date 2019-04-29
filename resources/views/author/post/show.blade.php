@@ -3,7 +3,22 @@
 @section('title','Post')
 
 @push('css')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 7px 30px;
+  cursor: pointer;
+  font-size: 15px;
+}
 
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+} 
+</style>
 @endpush
 
 @section('content')
@@ -71,10 +86,18 @@
                             </h2>
                         </div>
                         <div class="body">
-                        <!-- {{$post->user_id}} -->
+                        <!-- {{$post->user_id}}
+                        {{$post->id}} -->
                         <!-- <button onclick="{{route('author.s3image',$post->user_id)}}">사진보기</button> -->
-                        <a href="{{route('author.s3image',$post->user_id)}}">사진보기</a><br/>
-                        <a href="{{route('author.s3imagedown',$post->user_id)}}">다운</a>
+                        <a href="{{route('author.s3image',$post->id)}}">사진크게보기</a><br/>
+                        <img src="{{$path}}" style="width:60%"><br/><br/>
+                        <!-- <a href="{{route('author.s3imagedown',$post->id)}}">다운</a> -->
+                        <!-- <button onclick="{{route('author.s3imagedown',$post->id)}}">다운로드</button> -->
+                        <button class="btn" style="width:100%" onclick="location.href='{{route('author.s3imagedown',$post->id)}}'"><i class="fa fa-download"></i> Download</button>
+                        <!-- <button class="btn" style="width:100%" onclick="window.location={{route('author.s3imagedown',$post->id)}}"><i class="fa fa-download"></i> Download</button> -->
+                        <!-- <button class="btn" style="width:100%" href="{{route('author.s3imagedown',$post->id)}}"><i class="fa fa-download"></i> Download</button> -->
+
+
 
 
                         </div>
