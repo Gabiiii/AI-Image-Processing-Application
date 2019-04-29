@@ -17,7 +17,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                               ADD NEW POST
+                               포스트 작성
                             </h2>
                         </div>
                         <div class="body">
@@ -29,14 +29,14 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="image">Featured Image</label>
+                                    <label for="image">사진 선택</label>
                                     <input type="file" name="image">
                                 </div>
-
+<!-- 
                             <div class="form-group">
                                 <input type="checkbox" id="publish" class="filled-in" name="status" value="1">
                                 <label for="publish">Publish</label>
-                            </div>
+                            </div> -->
 
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                             </h2>
                         </div>
                         <div class="body">
-                            <!-- <div class="form-group form-float">
+                            <div class="form-group form-float">
                                 <div class="form-line {{ $errors->has('categories') ? 'focused error' : '' }}">
                                     <label for="category">Select Category</label>
                                     <select name="categories[]" id="category" class="form-control show-tick" data-live-search="true" multiple>
@@ -69,7 +69,7 @@
                                         @endforeach
                                     </select>
                                 </div>
-                            </div> -->
+                            </div>
 
                             <a  class="btn btn-danger m-t-15 waves-effect" href="{{ route('author.post.index') }}">BACK</a>
                             <button type="submit" class="btn btn-primary m-t-15 waves-effect">SUBMIT</button>

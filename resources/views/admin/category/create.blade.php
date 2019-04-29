@@ -14,7 +14,7 @@
                 <div class="card">
                     <div class="header">
                         <h2>
-                           ADD NEW CATEGORY
+                           카테고리 추가
                         </h2>
                     </div>
                     <div class="body">
@@ -23,16 +23,16 @@
                             <div class="form-group form-float">
                                 <div class="form-line">
                                     <input type="text" id="name" class="form-control" name="name">
-                                    <label class="form-label">Category Name</label>
+                                    <label class="form-label">카테고리 이름</label>
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <input type="file" name="image">
-                            </div>
+                            </div> -->
 
-                            <a  class="btn btn-danger m-t-15 waves-effect" href="{{ route('admin.category.index') }}">BACK</a>
-                            <button type="submit" class="btn btn-primary m-t-15 waves-effect">SUBMIT</button>
+                            <a  class="btn btn-danger m-t-15 waves-effect" href="{{ route('admin.category.index') }}">뒤로</a>
+                            <button type="submit" class="btn btn-primary m-t-15 waves-effect">추가</button>
                         </form>
                     </div>
                 </div>

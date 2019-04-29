@@ -41,34 +41,34 @@
                 <li class="{{ Request::is('admin/dashboard') ? 'active' : '' }}">
                     <a href="{{ route('admin.dashboard') }}">
                         <i class="material-icons">dashboard</i>
-                        <span>Dashboard</span>
+                        <span>홈</span>
                     </a>
                 </li>
                 <li class="{{ Request::is('admin/tag*') ? 'active' : '' }}">
                     <a href="{{ route('admin.tag.index') }}">
                         <i class="material-icons">label</i>
-                        <span>Tag</span>
+                        <span>태그</span>
                     </a>
                 </li>
                 <li class="{{ Request::is('admin/category*') ? 'active' : '' }}">
                     <a href="{{ route('admin.category.index') }}">
                         <i class="material-icons">apps</i>
-                        <span>Category</span>
+                        <span>카테고리</span>
                     </a>
                 </li>
                 <li class="{{ Request::is('admin/post*') ? 'active' : '' }}">
                     <a href="{{ route('admin.post.index') }}">
                         <i class="material-icons">library_books</i>
-                        <span>Posts</span>
+                        <span>포스트</span>
                     </a>
                 </li>
                 <li class="{{ Request::is('admin/pending/post') ? 'active' : '' }}">
                     <a href="{{ route('admin.post.pending') }}">
                         <i class="material-icons">library_books</i>
-                        <span>Pending Posts</span>
+                        <span>포스트 승인</span>
                     </a>
                 </li>
-                <li class="{{ Request::is('admin/favorite') ? 'active' : '' }}">
+                <!-- <li class="{{ Request::is('admin/favorite') ? 'active' : '' }}">
                     <a href="{{ route('admin.favorite.index') }}">
                         <i class="material-icons">favorite</i>
                         <span>Favorite Posts</span>
@@ -79,25 +79,25 @@
                         <i class="material-icons">comment</i>
                         <span>Comments</span>
                     </a>
-                </li>
+                </li> -->
                 <li class="{{ Request::is('admin/authors') ? 'active' : '' }}">
                     <a href="{{ route('admin.author.index') }}">
                         <i class="material-icons">account_circle</i>
-                        <span>Authors</span>
+                        <span>사용자</span>
                     </a>
                 </li>
-                <li class="{{ Request::is('admin/subscriber') ? 'active' : '' }}">
+                <!-- <li class="{{ Request::is('admin/subscriber') ? 'active' : '' }}">
                     <a href="{{ route('admin.subscriber.index') }}">
                         <i class="material-icons">subscriptions</i>
-                        <span>Subscribers</span>
+                        <span>구독</span>
                     </a>
-                </li>
+                </li> -->
                 <li class="header">System</li>
 
                 <li class="{{ Request::is('admin/settings') ? 'active' : '' }}">
                     <a href="{{ route('admin.settings') }}">
                         <i class="material-icons">settings</i>
-                        <span>Settings</span>
+                        <span>설정</span>
                     </a>
                 </li>
                 <li>
@@ -123,7 +123,7 @@
                 <li class="{{ Request::is('author/post*') ? 'active' : '' }}">
                     <a href="{{ route('author.post.index') }}">
                         <i class="material-icons">library_books</i>
-                        <span>Posts</span>
+                        <span>포스트</span>
                     </a>
                 </li>
                 <!-- <li class="{{ Request::is('author/favorite') ? 'active' : '' }}">
@@ -144,7 +144,7 @@
                 <li class="{{ Request::is('author/settings') ? 'active' : '' }}">
                     <a href="{{ route('author.settings') }}">
                         <i class="material-icons">settings</i>
-                        <span>Settings</span>
+                        <span>설정</span>
                     </a>
                 </li>
                 <li>
@@ -165,13 +165,13 @@
     </div>
     <!-- #Menu -->
     <!-- Footer -->
-    <div class="legal">
+    <!-- <div class="legal">
         <div class="copyright">
             &copy; 2016 - 2017 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
         </div>
         <div class="version">
             <b>Version: </b> 1.0.5
         </div>
-    </div>
+    </div> -->
     <!-- #Footer -->
 </aside>

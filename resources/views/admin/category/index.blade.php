@@ -12,7 +12,7 @@
         <div class="block-header">
             <a class="btn btn-primary waves-effect" href="{{ route('admin.category.create') }}">
                 <i class="material-icons">add</i>
-                <span>Add New Category</span>
+                <span>카테고리 추가</span>
             </a>
         </div>
         <!-- Exportable Table -->
@@ -21,7 +21,7 @@
                 <div class="card">
                     <div class="header">
                         <h2>
-                            ALL CATEGORIES
+                            전체 카테고리
                             <span class="badge bg-blue">{{ $categories->count() }}</span>
                         </h2>
                     </div>
