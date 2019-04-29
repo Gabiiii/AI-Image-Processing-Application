@@ -170,7 +170,7 @@ class PostController extends Controller
         {
 //            make unipue name for image
             $currentDate = Carbon::now()->toDateString();
-            $imageName  = $slug.'-'.$currentDate.'-'.uniqid().'.'.$image->getClientOriginalExtension();
+            $imageName  = 'before/'.$slug.'-'.$currentDate.'-'.uniqid().'.'.$image->getClientOriginalExtension();
 
             if(!Storage::disk('public')->exists('post'))
             {
