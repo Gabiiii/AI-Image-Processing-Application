@@ -4,10 +4,10 @@
             <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
             <a href="javascript:void(0);" class="bars"></a>
             @if(Auth::user()->role->id == 1)
-            <li><a class="navbar-brand" href="{{ route('admin.dashboard') }}">AIMAGE</a></li>
+            <li><a class="navbar-brand" href="{{ route('home') }}">AIMAGE</a></li>
         @endif
         @if(Auth::user()->role->id == 2)
-        <li><a class="navbar-brand" href="{{ route('author.post.index') }}">AIMAGE</a></li>
+        <li><a class="navbar-brand" href="{{ route('home') }}">AIMAGE</a></li>
         @endif
 
         </div>
