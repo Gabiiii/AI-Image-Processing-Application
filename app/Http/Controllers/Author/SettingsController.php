@@ -42,7 +42,7 @@ class SettingsController extends Controller
             {
                 Storage::disk('public')->delete('profile/'.$user->image);
             }
-            $profile = Image::make($image)->resize(500,500)->save();
+            $profile = Image::make($image)->resize(500,500)->stream();
             Storage::disk('public')->put('profile/'.$imageName,$profile);
         } else {
             $imageName = $user->image;

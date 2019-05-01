@@ -27,9 +27,9 @@
                                 </div>
                             </div>
 
-                            <!-- <div class="form-group">
+                            <div class="form-group">
                                 <input type="file" name="image">
-                            </div> -->
+                            </div>
 
                             <a  class="btn btn-danger m-t-15 waves-effect" href="{{ route('admin.category.index') }}">뒤로</a>
                             <button type="submit" class="btn btn-primary m-t-15 waves-effect">추가</button>

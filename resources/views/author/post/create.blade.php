@@ -45,7 +45,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                Categories and Tags
+                                카테고리 및 태그
                             </h2>
                         </div>
                         <div class="body">
