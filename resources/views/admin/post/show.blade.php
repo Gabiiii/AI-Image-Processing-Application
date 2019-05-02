@@ -3,7 +3,21 @@
 @section('title','Post')
 
 @push('css')
+<style>
+.btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 7px 30px;
+  cursor: pointer;
+  font-size: 15px;
+}
 
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+} 
+</style>
 @endpush
 
 @section('content')
@@ -73,8 +87,11 @@
                             </h2>
                         </div>
                         <div class="body">
+                        <a href="{{route('author.s3image',$post->id)}}">사진크게보기</a><br/>
+                        <img src="{{$path}}" style="width:60%"><br/><br/>
+                        <button class="btn" style="width:100%" onclick="location.href='{{route('author.s3imagedown',$post->id)}}'"><i class="fa fa-download"></i> Download</button>
 
-                            <img class="img-responsive thumbnail" src="{{ Storage::disk('public')->url('post/'.$post->image) }}" alt="">
+                            <!-- <img class="img-responsive thumbnail" src="{{ Storage::disk('public')->url('post/'.$post->image) }}" alt=""> -->
 
                         </div>
                     </div>

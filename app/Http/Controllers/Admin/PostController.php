@@ -113,7 +113,10 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        return view('admin.post.show',compact('post'));
+        $imageName = Storage::disk('s3')->url($post->image);
+
+        return view('admin.post.show',compact('post'),["path"=>$imageName]);
+
     }
 
     /**
