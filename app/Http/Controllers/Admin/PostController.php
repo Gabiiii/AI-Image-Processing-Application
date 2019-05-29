@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 
+
 class PostController extends Controller
 {
     /**
@@ -51,7 +52,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'title' => 'required',
+            'titagle' => 'required',
             'image' => 'required',
             'categories' => 'required',
             'tags' => 'required',

@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Redis;
+
 
 class PostController extends Controller
 {
@@ -62,7 +64,12 @@ class PostController extends Controller
         {
 //            make unipue name for image
             $currentDate = Carbon::now()->toDateString();
-            $imageName  = 'before/'.$slug.'-'.$currentDate.'-'.uniqid().'.'.$image->getClientOriginalExtension();
+            // $imageName  = $slug.'-'.$currentDate.'-'.uniqid().'.'.$image->getClientOriginalExtension();
+            $imageName = $image->getClientOriginalName();
+
+
+            // $imageName  = $image.'.'.$image->getClientOriginalExtension();
+
 
             // if(!Storage::disk('public')->exists('post'))
             // {
@@ -72,6 +79,9 @@ class PostController extends Controller
             // $postImage = Image::make($image)->resize(1600,1066)->save(); 여기서 tmp 문제
             // Storage::disk('public')->put('post/'.$imageName,$postImage);
             $t = Storage::disk('s3')->put($imageName, file_get_contents($image), 'public');
+            response()->json(['file_name'=>$imageName]);
+            // Redis::set('name2','tes2');
+            // Redis::set('ori',$imageName);
 
 
         } else {

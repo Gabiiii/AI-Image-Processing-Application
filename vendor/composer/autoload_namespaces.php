@@ -8,6 +8,9 @@ $baseDir = dirname($vendorDir);
 return array(
     'Prophecy\\' => array($vendorDir . '/phpspec/prophecy/src'),
     'Parsedown' => array($vendorDir . '/erusev/parsedown'),
+    'OpenCloud' => array($vendorDir . '/rackspace/php-opencloud/lib'),
     'Mockery' => array($vendorDir . '/mockery/mockery/library'),
+    'Guzzle\\Tests' => array($vendorDir . '/guzzle/guzzle/tests'),
+    'Guzzle' => array($vendorDir . '/guzzle/guzzle/src'),
     'Doctrine\\Common\\Lexer\\' => array($vendorDir . '/doctrine/lexer/lib'),
 );
