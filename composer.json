@@ -14,7 +14,8 @@
         "laravel/tinker": "^1.0",
         "league/flysystem-aws-s3-v3": "~1.0",
         "predis/predis": "^1.1",
-        "rackspace/php-opencloud": "dev-master"
+        "rackspace/php-opencloud": "dev-master",
+        "ixudra/curl": "^6.16"
     },
     "require-dev": {
         "filp/whoops": "^2.0",

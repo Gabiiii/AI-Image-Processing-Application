@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Redis;
-
+use Ixudra\Curl\Facades\Curl;
 
 class PostController extends Controller
 {
@@ -79,9 +79,12 @@ class PostController extends Controller
             // $postImage = Image::make($image)->resize(1600,1066)->save(); 여기서 tmp 문제
             // Storage::disk('public')->put('post/'.$imageName,$postImage);
             $t = Storage::disk('s3')->put($imageName, file_get_contents($image), 'public');
-            response()->json(['file_name'=>$imageName]);
-            // Redis::set('name2','tes2');
-            // Redis::set('ori',$imageName);
+            $response = Curl::to('183.101.114.229:5000/srgan')
+            ->withData( array('file_name'=>'test77-2019-05-16-5cdd2003b7df3.png'))
+            ->asJson(true)
+            ->post();
+            dd($response);
+
 
 
         } else {
