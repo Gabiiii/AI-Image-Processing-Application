@@ -78,13 +78,12 @@ class PostController extends Controller
 
             // $postImage = Image::make($image)->resize(1600,1066)->save(); 여기서 tmp 문제
             // Storage::disk('public')->put('post/'.$imageName,$postImage);
-            $t = Storage::disk('s3')->put($imageName, file_get_contents($image), 'public');
+            // $t = Storage::disk('s3')->put($imageName, file_get_contents($image),'public');
+            $t = Storage::disk('s3')->put('before/'.$imageName, file_get_contents($image));
             $response = Curl::to('183.101.114.229:5000/srgan')
             ->withData( array('file_name'=>'test77-2019-05-16-5cdd2003b7df3.png'))
             ->asJson(true)
             ->post();
-            dd($response);
-
 
 
         } else {
@@ -127,13 +126,16 @@ class PostController extends Controller
             Toastr::error('이 게시물에 액세스할 수 있는 권한이 없음','Error');
             return redirect()->back();
         }
-        $imageName = Storage::disk('s3')->url($post->image);
+        $bimageName = Storage::disk('s3')->url('before/'.$post->image);
+        $aimageName = Storage::disk('s3')->url('after/'.'out_srf_4_'.$post->image);
         // $post=$post->view_count+1;
         // dd($imageName);
 
         // return "<img src='".$imageName."'/>";
 
-        return view('author.post.show',compact('post'),["path"=>$imageName]);
+        return view('author.post.show',compact('post'),[
+            "bpath"=>$bimageName,
+            "apath"=>$aimageName]);
         // ->with('path',$imageName);
 
     }
