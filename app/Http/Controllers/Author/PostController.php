@@ -81,7 +81,7 @@ class PostController extends Controller
             // $t = Storage::disk('s3')->put($imageName, file_get_contents($image),'public');
             $t = Storage::disk('s3')->put('before/'.$imageName, file_get_contents($image));
             $response = Curl::to('183.101.114.229:5000/srgan')
-            ->withData( array('file_name'=>'test77-2019-05-16-5cdd2003b7df3.png'))
+            ->withData( array('file_name'=>$imageName))
             ->asJson(true)
             ->post();
 
