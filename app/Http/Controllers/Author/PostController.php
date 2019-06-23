@@ -79,9 +79,10 @@ class PostController extends Controller
             // $postImage = Image::make($image)->resize(1600,1066)->save(); 여기서 tmp 문제
             // Storage::disk('public')->put('post/'.$imageName,$postImage);
             // $t = Storage::disk('s3')->put($imageName, file_get_contents($image),'public');
+            
             $t = Storage::disk('s3')->put('before/'.$imageName, file_get_contents($image));
             // $response = Curl::to('183.101.114.229:5000/srgan')
-            $response = Curl::to('183.101.114.229:5000/srgan')
+            $response = Curl::to('183.101.114.245:5000/srgan')
             ->withData( array('file_name'=>$imageName))
             ->asJson(true)
             ->post();
@@ -128,7 +129,7 @@ class PostController extends Controller
             return redirect()->back();
         }
         $bimageName = Storage::disk('s3')->url('before/'.$post->image);
-        $aimageName = Storage::disk('s3')->url('after/'.'out_srf_4_'.$post->image);
+        $aimageName = Storage::disk('s3Other1')->url('after/'.'out_srf_4_'.$post->image);
         // $post=$post->view_count+1;
         // dd($imageName);
 

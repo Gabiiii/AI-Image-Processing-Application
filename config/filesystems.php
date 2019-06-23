@@ -57,13 +57,22 @@ return [
 
         's3' => [
             'driver' => 's3',
-            'key' => env('AWS_ACCESS_KEY_ID'),
-            'secret' => env('AWS_SECRET_ACCESS_KEY'),
-            'region' => env('AWS_DEFAULT_REGION'),
-            'bucket' => env('AWS_BUCKET'),
+            'key' => env('AWS_ACCESS_KEY_ID','AKIAJ6QZY2WEKTSNMFOQ'),
+            'secret' => env('AWS_SECRET_ACCESS_KEY','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'),
+            'region' => env('AWS_DEFAULT_REGION','ap-northeast-2'),
+            'bucket' => env('AWS_BUCKET','elasticbeanstalk-ap-northeast-2-045951459452'),
             'url' => env('AWS_URL'),
 
         ],
+        's3Other1'=> [
+            'driver'=> 's3',
+            'key' => env('AWS_ACCESS_KEY_ID','AKIAJ6QZY2WEKTSNMFOQ'),
+            'secret' => env('AWS_SECRET_ACCESS_KEY','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'),
+            'region' => env('AWS_DEFAULT_REGION','us-east-1'),
+            'bucket' => env('AWS_BUCKET','output-after'),
+            'url' => env('AWS_URL'),
+
+        ]
 
     ],
 
