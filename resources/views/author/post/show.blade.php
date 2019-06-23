@@ -91,11 +91,9 @@
                         <!-- <button onclick="{{route('author.s3image',$post->user_id)}}">사진보기</button> -->
                         <a href="{{route('author.s3image',$post->id)}}">사진크게보기</a><br/>
                         <img src="{{$bpath}}" style="width:60%"><br/><br/>
-                        <!-- <a href="{{route('author.s3imagedown',$post->id)}}">다운</a> -->
-                        <!-- <button onclick="{{route('author.s3imagedown',$post->id)}}">다운로드</button> -->
-                        <button class="btn" style="width:100%" onclick="location.href='{{route('author.s3imagedown',$post->id)}}'"><i class="fa fa-download"></i> Download</button>
-                        <!-- <button class="btn" style="width:100%" onclick="window.location={{route('author.s3imagedown',$post->id)}}"><i class="fa fa-download"></i> Download</button> -->
-                        <!-- <button class="btn" style="width:100%" href="{{route('author.s3imagedown',$post->id)}}"><i class="fa fa-download"></i> Download</button> -->
+
+                        <button class="btn" style="width:100%" onclick="location.href='{{route('author.s3imagedownbe',$post->id)}}'"><i class="fa fa-download"></i> Download</button>
+                       
 
                         </div>
                     </div>
@@ -114,11 +112,9 @@
                         
                         <a href="{{route('author.s3image',$post->id)}}">사진크게보기</a><br/>
                         <img src="{{$apath}}" style="width:60%"><br/><br/>
-                        <!-- <a href="{{route('author.s3imagedown',$post->id)}}">다운</a> -->
-                        <!-- <button onclick="{{route('author.s3imagedown',$post->id)}}">다운로드</button> -->
-                        <button class="btn" style="width:100%" onclick="location.href='{{route('author.s3imagedown',$post->id)}}'"><i class="fa fa-download"></i> Download</button>
-                        <!-- <button class="btn" style="width:100%" onclick="window.location={{route('author.s3imagedown',$post->id)}}"><i class="fa fa-download"></i> Download</button> -->
-                        <!-- <button class="btn" style="width:100%" href="{{route('author.s3imagedown',$post->id)}}"><i class="fa fa-download"></i> Download</button> -->
+
+                        <button class="btn" style="width:100%" onclick="location.href='{{route('author.s3imagedownaf',$post->id)}}'"><i class="fa fa-download"></i> Download</button>
+                       
                         
 
                         </div>

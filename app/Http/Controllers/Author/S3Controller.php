@@ -35,7 +35,7 @@ class S3Controller extends Controller
          
     }
 
-    public function imagedown($id)
+    public function imagedownbe($id)
     {
         $post = Post::find($id);
         $image =  Storage::disk('s3')->url($post->image); 
@@ -46,6 +46,23 @@ class S3Controller extends Controller
         header("Cache-Control: public");
         header("Content-Description: File Transfer");
         header("Content-Disposition: attachment; filename=" . $post->image);
+        header("Content-Type: image/jpeg");
+        return readfile($image);
+
+
+    }
+
+    public function imagedownaf($id)
+    {
+        $post = Post::find($id);
+        $image = Storage::disk('s3Other1')->url('out_srf_4_'.$post->image);
+
+        // dd($image);
+        // $imagename="test.jpeg";
+
+        header("Cache-Control: public");
+        header("Content-Description: File Transfer");
+        header("Content-Disposition: attachment; filename=" . 'out_srf_4_'.$post->image);
         header("Content-Type: image/jpeg");
         return readfile($image);
 

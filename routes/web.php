@@ -72,7 +72,8 @@ Route::group(['as'=>'author.','prefix'=>'author','namespace'=>'Author','middlewa
     Route::get('/favorite','FavoriteController@index')->name('favorite.index');
 
     Route::get('/s3Controller/show/{id}','S3Controller@imageshow')->name('s3image');
-    Route::get('/s3Controller/down/{id}','S3Controller@imagedown')->name('s3imagedown');
+    Route::get('/s3Controller/downbe/{id}','S3Controller@imagedownbe')->name('s3imagedownbe');
+    Route::get('/s3Controller/downaf/{id}','S3Controller@imagedownaf')->name('s3imagedownaf');
 
 });
 
