@@ -57,19 +57,19 @@ return [
 
         's3' => [
             'driver' => 's3',
-            'key' => env('AWS_ACCESS_KEY_ID','AKIAJ6QZY2WEKTSNMFOQ'),
-            'secret' => env('AWS_SECRET_ACCESS_KEY','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'),
-            'region' => env('AWS_DEFAULT_REGION','ap-northeast-2'),
-            'bucket' => env('AWS_BUCKET','elasticbeanstalk-ap-northeast-2-045951459452'),
+            'key' => env('AWS_ACCESS_KEY_ID','AKIAUOS54HH6XFPXUKU3'),
+            'secret' => env('AWS_SECRET_ACCESS_KEY','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'),
+            'region' => env('AWS_DEFAULT_REGION','us-east-2'),
+            'bucket' => env('AWS_BUCKET','aimage-input'),
             'url' => env('AWS_URL'),
 
         ],
         's3Other1'=> [
             'driver'=> 's3',
-            'key' => env('AWS_ACCESS_KEY_ID','AKIAJ6QZY2WEKTSNMFOQ'),
-            'secret' => env('AWS_SECRET_ACCESS_KEY','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'),
-            'region' => env('AWS_DEFAULT_REGION','us-east-1'),
-            'bucket' => env('AWS_BUCKET','output-after'),
+            'key' => env('AWS_ACCESS_KEY_ID','AKIAUOS54HH6XFPXUKU3'),
+            'secret' => env('AWS_SECRET_ACCESS_KEY','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'),
+            'region' => env('AWS_DEFAULT_REGION','ap-northeast-2'),
+            'bucket' => env('AWS_BUCKET','aimage-result'),
             'url' => env('AWS_URL'),
 
         ]

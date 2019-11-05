@@ -3,6 +3,8 @@
     <div class="user-info">
         <div class="image">
             <img src="{{ Storage::disk('public')->url('profile/'.Auth::user()->image) }}" width="48" height="48" alt="User" />
+            <!-- <img src="{{ asset('assets/backend/images/user.png') }}" width="48" height="48" alt="User" /> -->
+
 
         </div>
         <div class="info-container">
